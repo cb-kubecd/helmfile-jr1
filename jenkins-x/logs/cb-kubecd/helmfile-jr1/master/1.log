@@ -1,0 +1,72 @@
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-7dhpq[0m
+{"level":"warn","ts":1579790244.0185907,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1579790244.0191376,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-prsvc[0m
+{"level":"warn","ts":1579790245.9577832,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1579790245.9607503,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-helmfile-jr1-master-7569g[0m
+{"level":"warn","ts":1579790324.3123283,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1579790325.6205723,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/helmfile-jr1.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/helmfile-jr1 main.go
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/helmfile-jr1"]                 
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+ERROR: logging before flag.Parse: E0123 14:38:54.274098      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+ERROR: logging before flag.Parse: E0123 14:38:54.301333      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+2020/01/23 14:38:57 pushed blob: sha256:3a69199100861a583c634e5e0e94f68726bece5f5a1bac0bcd2a47346e1ca1e9
+2020/01/23 14:38:58 pushed blob: sha256:e0855a03d92b2933581b759797f5746571cdfb813a6b3d23ae28c110b9e536ec
+2020/01/23 14:38:59 gcr.io/**-development/helmfile-jr1:0.0.1: digest: sha256:9888694b0bc0615c37fbbfc2875ff6b79b9151e01549e93624f566c7a600340e size: 428
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/helmfile-jr1 to an unshallow repository
+Generating change log from git ref 1a524e9a8feffcb08b2958b5b1be50029b1ca650 => d0b929f0302196153da35c1774b67b390386d516
+Associating user x-0 in users.jenkins.io with email rawlingsj80@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit e6c8fe678cdb32787c58b1291c2c55e1ca354621 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for cb-kubecd/helmfile-jr1 and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/cb-kubecd/helmfile-jr1/releases/tag/v0.0.1
+generated: /workspace/source/charts/helmfile-jr1/templates/release.yaml
+Created Release helmfile-jr1-0-0-1 resource in namespace **
+Updating PipelineActivity cb-kubecd-helmfile-jr1-master-1 with version 0.0.1
+Updated PipelineActivities cb-kubecd-helmfile-jr1-master-1 with release notes URL: https://github.com/cb-kubecd/helmfile-jr1/releases/tag/v0.0.1
+
+Showing logs for build [32mcb-kubecd-helmfile-jr1-master-92cx5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+error: failed to build dependencies for chart from directory '.': failed to add chart repositories: failed to add the Helm repository with URL 'http://jenkins-x-chartmuseum:8080': prompting for creds for http://jenkins-x-chartmuseum:8080: checking status code of http://jenkins-x-chartmuseum:8080/index.yaml: Get http://jenkins-x-chartmuseum:8080/index.yaml: dial tcp: lookup jenkins-x-chartmuseum on 10.15.240.10:53: no such host
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-helm-release'. The execution of the pipeline has stopped.[0m
